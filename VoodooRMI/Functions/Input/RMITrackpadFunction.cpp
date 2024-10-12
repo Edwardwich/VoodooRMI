@@ -217,8 +217,9 @@ void RMITrackpadFunction::handleReport(RMI2DSensorReport *report)
                 
                 // Force touch emulation only works with clickpads (button underneath trackpad)
                 // Lock finger in place and in force touch until lifted
-                // Checks for VALID input before registering as force touch
-                if (isForceTouch(obj.z) && fingerState[i] == RMI_FINGER_VALID) {
+                // // Checks for VALID input before registering as force touch
+                // if (isForceTouch(obj.z) && fingerState[i] == RMI_FINGER_VALID) {
+                if (isForceTouch(obj.z)) {
                     fingerState[i] = RMI_FINGER_FORCE_TOUCH;
                 }
                 
